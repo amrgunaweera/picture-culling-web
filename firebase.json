@@ -1,0 +1,12 @@
+{
+  "hosting": {
+    "site": "cullexa",
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "public/**"
+    ]
+  }
+}
