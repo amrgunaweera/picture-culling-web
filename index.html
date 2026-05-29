@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cullexa — AI-Powered Photo Culling for Windows</title>
+  <meta name="description"
+    content="Cull thousands of photos in minutes with AI-powered quality analysis. Rate, compare, and clean up your photo library effortlessly. Free for a limited time." />
+  <meta name="keywords"
+    content="photo culling, AI image analysis, photo organizer, Windows app, photo rating, image quality" />
+  <meta name="author" content="Cullexa" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Cullexa — AI-Powered Photo Culling" />
+  <meta property="og:description"
+    content="Cull thousands of photos in minutes with AI-powered quality analysis. Free for a limited time." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon (Tabler Aperture SVG) -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238b5cf6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><line x1='3.6' y1='15' x2='14.15' y2='15'/><line x1='3.6' y1='15' x2='8.24' y2='6.93'/><line x1='12' y1='3' x2='17.24' y2='12.07'/><line x1='20.4' y1='9' x2='9.85' y2='9'/><line x1='20.4' y1='9' x2='15.76' y2='17.07'/><line x1='12' y1='21' x2='6.76' y2='11.93'/></svg>" />
+
+  <!-- Tabler Icons CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Animated Background -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- ====== NAVIGATION ====== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo" aria-label="Cullexa Home">
+        <span class="logo-icon"><i class="ti ti-aperture"></i></span>
+        Cullexa
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#views">App Views</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#download">Download</a></li>
+        <li>
+          <a href="#download" class="nav-cta">
+            <i class="ti ti-download"></i> Get Free
+          </a>
+        </li>
+      </ul>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+        <i class="ti ti-menu-2" id="menuIcon"></i>
+        <i class="ti ti-x" id="closeIcon" style="display: none;"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ====== HERO ====== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-tag">Free</span>
+        Limited-Time Promotion — Download Now
+      </div>
+
+      <h1 class="hero-title">
+        Cull Photos<br />
+        <span class="gradient-text">Smarter with AI</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Let artificial intelligence analyze your photo collection, score every image from 0–100, and help you keep only
+        the best shots. Clean up thousands of photos in minutes, not hours.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#download" class="btn-primary" id="heroDownloadBtn">
+          <i class="ti ti-download"></i> Download Free for Windows
+        </a>
+        <a href="#views" class="btn-secondary">
+          <i class="ti ti-player-play"></i> See It in Action
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="stat-value" id="statPhotos">0</div>
+          <div class="stat-label">Photos Analyzed</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-value" id="statTime">0%</div>
+          <div class="stat-label">Time Saved</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-value" id="statRating">0</div>
+          <div class="stat-label">AI Accuracy Score</div>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="assets/app-grid-view.png"
+          alt="Cullexa - AI Photo Culling Grid View showing image thumbnails with quality scores" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FEATURES ====== -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag"><i class="ti ti-sparkles"></i> Features</div>
+        <h2 class="section-title">Everything You Need to<br /><span class="gradient-text">Master Your Photo
+            Library</span></h2>
+        <p class="section-desc">Powered by intelligent image analysis, Cullexa gives you the tools to make fast,
+          confident decisions about every photo.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon purple"><i class="ti ti-robot"></i></div>
+          <h3>AI Quality Scoring</h3>
+          <p>Every image gets an intelligent quality score from 0–100 based on sharpness, exposure, composition, and
+            more. No manual inspection needed.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon blue"><i class="ti ti-folder"></i></div>
+          <h3>Folder Selection</h3>
+          <p>Simply point Cullexa at any folder on your PC. It scans and analyzes all images recursively — drag-and-drop
+            simple.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card reveal reveal-delay-3">
+          <div class="feature-icon green"><i class="ti ti-circle-check"></i></div>
+          <h3>Accept & Reject</h3>
+          <p>Quickly accept keepers and reject the rest. Rejected images can be sent straight to the Recycle Bin with a
+            single click — safely and reversibly.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card reveal reveal-delay-4">
+          <div class="feature-icon amber"><i class="ti ti-star"></i></div>
+          <h3>Star Ratings</h3>
+          <p>Give your favourite shots 1–5 star ratings for personal ranking. Combine AI scores with your creative eye
+            for perfect curation.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card reveal reveal-delay-5">
+          <div class="feature-icon cyan"><i class="ti ti-columns"></i></div>
+          <h3>Compare Mode</h3>
+          <p>Place two images side by side and compare every detail. Perfect for choosing the best shot from a burst or
+            similar compositions.</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card reveal reveal-delay-5">
+          <div class="feature-icon red"><i class="ti ti-trash"></i></div>
+          <h3>Safe Cleanup</h3>
+          <p>Remove rejected photos directly to the Recycle Bin from within the app. Recover any accidental deletions
+            with confidence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== APP VIEWS SHOWCASE ====== -->
+  <section class="showcase" id="views">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag"><i class="ti ti-device-desktop-analytics"></i> App Views</div>
+        <h2 class="section-title">Three Ways to<br /><span class="gradient-text">Browse Your Photos</span></h2>
+        <p class="section-desc">Switch between views to match your workflow. Whether you're scanning hundreds of
+          thumbnails or pixel-peeping a single frame.</p>
+      </div>
+
+      <div class="showcase-tabs reveal">
+        <button class="showcase-tab active" data-tab="grid" id="tabGrid"><i class="ti ti-layout-grid"></i> Grid
+          View</button>
+        <button class="showcase-tab" data-tab="slider" id="tabSlider"><i class="ti ti-photo"></i> Slider View</button>
+        <button class="showcase-tab" data-tab="compare" id="tabCompare"><i class="ti ti-git-compare"></i> Compare
+          Mode</button>
+      </div>
+
+      <div class="showcase-content reveal">
+        <!-- Grid View -->
+        <div class="showcase-panel active" id="panel-grid">
+          <div class="showcase-image">
+            <img src="assets/app-grid-view.png" alt="Grid View — browse all photos with AI scores at a glance" />
+            <div class="showcase-caption">
+              <div>
+                <h4>Grid View</h4>
+                <p>See all your photos at once with AI scores overlaid on every thumbnail.</p>
+              </div>
+              <span class="caption-badge">Most Popular</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider View -->
+        <div class="showcase-panel" id="panel-slider">
+          <div class="showcase-image">
+            <img src="assets/app-slider-view.png" alt="Slider View — full-size preview with AI analysis panel" />
+            <div class="showcase-caption">
+              <div>
+                <h4>Slider View</h4>
+                <p>Full-size preview with detailed AI analysis, star rating, and accept/reject controls.</p>
+              </div>
+              <span class="caption-badge">Detail Focused</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Compare Mode -->
+        <div class="showcase-panel" id="panel-compare">
+          <div class="showcase-image">
+            <img src="assets/app-compare-view.png" alt="Compare Mode — side-by-side comparison of two photos" />
+            <div class="showcase-caption">
+              <div>
+                <h4>Compare Mode</h4>
+                <p>Place two images side by side to pick the best shot from similar compositions.</p>
+              </div>
+              <span class="caption-badge">Pro Feature</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== HOW IT WORKS ====== -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag"><i class="ti ti-rocket"></i> How It Works</div>
+        <h2 class="section-title">From Chaos to Curated<br /><span class="gradient-text">in Four Simple Steps</span>
+        </h2>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card reveal reveal-delay-1">
+          <div class="step-number">1</div>
+          <h3>Select Folders</h3>
+          <p>Point the app at the folders containing your photos. It supports all major image formats.</p>
+        </div>
+
+        <div class="step-card reveal reveal-delay-2">
+          <div class="step-number">2</div>
+          <h3>AI Analyzes</h3>
+          <p>The built-in AI engine scores every image from 0 to 100 based on quality metrics.</p>
+        </div>
+
+        <div class="step-card reveal reveal-delay-3">
+          <div class="step-number">3</div>
+          <h3>Review &amp; Rate</h3>
+          <p>Browse results, accept the best, reject the rest, and add your own star ratings.</p>
+        </div>
+
+        <div class="step-card reveal reveal-delay-4">
+          <div class="step-number">4</div>
+          <h3>Clean Up</h3>
+          <p>Remove rejected images to the Recycle Bin with one click. Your library is now pristine.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== DOWNLOAD / PRICING ====== -->
+  <section class="download" id="download">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag"><i class="ti ti-gift"></i> Limited-Time Offer</div>
+        <h2 class="section-title">Get Cullexa<br /><span class="gradient-text">Completely Free</span></h2>
+        <p class="section-desc">We're giving away Cullexa at no cost for a limited time. No credit card, no catch — just
+          download and start culling.</p>
+      </div>
+
+      <div class="download-card reveal">
+        <div class="promo-banner">
+          <span class="pulse"></span>
+          Free Promotion Active
+        </div>
+
+        <div class="price-row">
+          <span class="price-original">$49.99</span>
+          <span class="price-free">FREE</span>
+        </div>
+
+        <p class="price-note">No credit card required · No subscription · Yours to keep forever</p>
+
+        <div class="download-features">
+          <div class="download-feature">
+            <span class="check-icon"><i class="ti ti-check"></i></span>
+            AI Image Quality Analysis
+          </div>
+          <div class="download-feature">
+            <span class="check-icon"><i class="ti ti-check"></i></span>
+            Unlimited Photo Scanning
+          </div>
+          <div class="download-feature">
+            <span class="check-icon"><i class="ti ti-check"></i></span>
+            Grid, Slider &amp; Compare Views
+          </div>
+          <div class="download-feature">
+            <span class="check-icon"><i class="ti ti-check"></i></span>
+            Star Rating System
+          </div>
+          <div class="download-feature">
+            <span class="check-icon"><i class="ti ti-check"></i></span>
+            Accept / Reject Workflow
+          </div>
+          <div class="download-feature">
+            <span class="check-icon"><i class="ti ti-check"></i></span>
+            Safe Recycle Bin Cleanup
+          </div>
+          <div class="download-feature">
+            <span class="check-icon"><i class="ti ti-check"></i></span>
+            All Future Updates Included
+          </div>
+          <div class="download-feature">
+            <span class="check-icon"><i class="ti ti-check"></i></span>
+            No Ads · No Telemetry
+          </div>
+        </div>
+
+        <a href="#" class="download-btn" id="downloadBtn">
+          <span class="win-icon"><i class="ti ti-brand-windows"></i></span>
+          Download for Windows
+        </a>
+
+        <p class="download-requirements">
+          Requires Windows 10 or later · 64-bit · ~85 MB download
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <span class="logo-icon"><i class="ti ti-aperture"></i></span>
+        Cullexa
+      </div>
+
+      <p class="footer-copy">
+        <i class="ti ti-copyright"></i> 2025 Cullexa. All rights reserved.
+      </p>
+
+      <ul class="footer-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#download">Download</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCpjSxqqgcmB4R--o0tegy2fwF4tsoUoxI",
+      authDomain: "amrg-projects.firebaseapp.com",
+      projectId: "amrg-projects",
+      storageBucket: "amrg-projects.firebasestorage.app",
+      messagingSenderId: "983114754283",
+      appId: "1:983114754283:web:63fd5b271965c2b3d676ae",
+      measurementId: "G-Q2LKL1ZSYK"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</body>
+
+</html>
