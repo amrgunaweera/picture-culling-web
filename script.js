@@ -1,5 +1,5 @@
 /* ========================================
-   Cullexa — Landing Page Scripts
+   Cullexa Picture Manager — Landing Page Scripts
    ======================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -125,10 +125,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---- Showcase tabs ----
   const tabs = document.querySelectorAll('.showcase-tab');
   const panels = document.querySelectorAll('.showcase-panel');
+  let currentTabIndex = 0;
 
-  tabs.forEach(tab => {
+  tabs.forEach((tab, index) => {
     tab.addEventListener('click', () => {
+      if (index === currentTabIndex) return;
+
       const target = tab.dataset.tab;
+      const direction = index > currentTabIndex ? 'next' : 'prev';
+      currentTabIndex = index;
 
       // Update active tab
       tabs.forEach(t => t.classList.remove('active'));
@@ -137,18 +142,27 @@ document.addEventListener('DOMContentLoaded', () => {
       // Animate panel transition
       panels.forEach(panel => {
         if (panel.id === `panel-${target}`) {
+          // New active panel
           panel.style.display = 'block';
+          panel.classList.remove('slide-prev', 'slide-next', 'exiting');
+          panel.classList.add(direction === 'next' ? 'slide-next' : 'slide-prev');
           // Trigger reflow
           panel.offsetHeight;
           panel.classList.add('active');
-        } else {
+        } else if (panel.classList.contains('active')) {
+          // Exiting panel
           panel.classList.remove('active');
+          panel.classList.remove('slide-prev', 'slide-next');
+          panel.classList.add('exiting');
+          panel.classList.add(direction === 'next' ? 'slide-prev' : 'slide-next');
+          
           // Let transition finish before hiding
           setTimeout(() => {
             if (!panel.classList.contains('active')) {
               panel.style.display = 'none';
+              panel.classList.remove('slide-prev', 'slide-next', 'exiting');
             }
-          }, 500);
+          }, 400);
         }
       });
     });
@@ -221,8 +235,8 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           btn.innerHTML = originalText;
           btn.style.pointerEvents = '';
-          // Here you would trigger the actual download
-          // window.location.href = '/download/cullexa-setup.exe';
+          // Trigger the actual download
+          window.open('Cullexa Picture Organizer Setup 1.0.0.exe', '_blank');
         }, 2000);
       });
     }

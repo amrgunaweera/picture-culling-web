@@ -4,22 +4,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cullexa — AI-Powered Photo Culling for Windows</title>
+  <title>Cullexa Picture Manager — AI-Powered Photo Culling for Windows</title>
   <meta name="description"
     content="Cull thousands of photos in minutes with AI-powered quality analysis. Rate, compare, and clean up your photo library effortlessly. Free for a limited time." />
   <meta name="keywords"
     content="photo culling, AI image analysis, photo organizer, Windows app, photo rating, image quality" />
-  <meta name="author" content="Cullexa" />
+  <meta name="author" content="Cullexa Picture Manager" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Cullexa — AI-Powered Photo Culling" />
+  <meta property="og:title" content="Cullexa Picture Manager — AI-Powered Photo Culling" />
   <meta property="og:description"
     content="Cull thousands of photos in minutes with AI-powered quality analysis. Free for a limited time." />
   <meta property="og:type" content="website" />
 
-  <!-- Favicon (Tabler Aperture SVG) -->
-  <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238b5cf6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><line x1='3.6' y1='15' x2='14.15' y2='15'/><line x1='3.6' y1='15' x2='8.24' y2='6.93'/><line x1='12' y1='3' x2='17.24' y2='12.07'/><line x1='20.4' y1='9' x2='9.85' y2='9'/><line x1='20.4' y1='9' x2='15.76' y2='17.07'/><line x1='12' y1='21' x2='6.76' y2='11.93'/></svg>" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
 
   <!-- Tabler Icons CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
@@ -39,9 +37,9 @@
   <!-- ====== NAVIGATION ====== -->
   <nav class="navbar" id="navbar">
     <div class="container">
-      <a href="#" class="nav-logo" aria-label="Cullexa Home">
-        <span class="logo-icon"><i class="ti ti-aperture"></i></span>
-        Cullexa
+      <a href="#" class="nav-logo" aria-label="Cullexa Picture Manager Home">
+        <img src="assets/logo.png" alt="Cullexa Picture Manager Logo" class="nav-logo-img" />
+        Cullexa Picture Manager
       </a>
 
       <ul class="nav-links" id="navLinks">
@@ -49,12 +47,13 @@
         <li><a href="#views">App Views</a></li>
         <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#download">Download</a></li>
-        <li>
-          <a href="#download" class="nav-cta">
-            <i class="ti ti-download"></i> Get Free
-          </a>
-        </li>
       </ul>
+      
+      <div class="nav-actions">
+        <a href="#download" class="nav-cta">
+          <i class="ti ti-download"></i> Get Free
+        </a>
+      </div>
 
       <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
         <i class="ti ti-menu-2" id="menuIcon"></i>
@@ -83,7 +82,7 @@
       </p>
 
       <div class="hero-actions">
-        <a href="#download" class="btn-primary" id="heroDownloadBtn">
+        <a href="Cullexa Picture Organizer Setup 1.0.0.exe" target="_blank" class="btn-primary" id="heroDownloadBtn">
           <i class="ti ti-download"></i> Download Free for Windows
         </a>
         <a href="#views" class="btn-secondary">
@@ -107,8 +106,9 @@
       </div>
 
       <div class="hero-image">
-        <img src="assets/app-grid-view.png"
-          alt="Cullexa - AI Photo Culling Grid View showing image thumbnails with quality scores" loading="eager" />
+        <img src="assets/app-grid-view.jpg"
+          alt="Cullexa Picture Manager - AI Photo Culling Grid View showing image thumbnails with quality scores"
+          loading="eager" />
       </div>
     </div>
   </section>
@@ -120,7 +120,8 @@
         <div class="section-tag"><i class="ti ti-sparkles"></i> Features</div>
         <h2 class="section-title">Everything You Need to<br /><span class="gradient-text">Master Your Photo
             Library</span></h2>
-        <p class="section-desc">Powered by intelligent image analysis, Cullexa gives you the tools to make fast,
+        <p class="section-desc">Powered by intelligent image analysis, Cullexa Picture Manager gives you the tools to
+          make fast,
           confident decisions about every photo.</p>
       </div>
 
@@ -137,7 +138,8 @@
         <div class="feature-card reveal reveal-delay-2">
           <div class="feature-icon blue"><i class="ti ti-folder"></i></div>
           <h3>Folder Selection</h3>
-          <p>Simply point Cullexa at any folder on your PC. It scans and analyzes all images recursively — drag-and-drop
+          <p>Simply point Cullexa Picture Manager at any folder on your PC. It scans and analyzes all images recursively
+            — drag-and-drop
             simple.</p>
         </div>
 
@@ -198,7 +200,7 @@
         <!-- Grid View -->
         <div class="showcase-panel active" id="panel-grid">
           <div class="showcase-image">
-            <img src="assets/app-grid-view.png" alt="Grid View — browse all photos with AI scores at a glance" />
+            <img src="assets/app-grid-view.jpg" alt="Grid View — browse all photos with AI scores at a glance" />
             <div class="showcase-caption">
               <div>
                 <h4>Grid View</h4>
@@ -212,7 +214,7 @@
         <!-- Slider View -->
         <div class="showcase-panel" id="panel-slider">
           <div class="showcase-image">
-            <img src="assets/app-slider-view.png" alt="Slider View — full-size preview with AI analysis panel" />
+            <img src="assets/app-slide-view.jpg" alt="Slider View — full-size preview with AI analysis panel" />
             <div class="showcase-caption">
               <div>
                 <h4>Slider View</h4>
@@ -226,7 +228,7 @@
         <!-- Compare Mode -->
         <div class="showcase-panel" id="panel-compare">
           <div class="showcase-image">
-            <img src="assets/app-compare-view.png" alt="Compare Mode — side-by-side comparison of two photos" />
+            <img src="assets/app-compare-mode.jpg" alt="Compare Mode — side-by-side comparison of two photos" />
             <div class="showcase-caption">
               <div>
                 <h4>Compare Mode</h4>
@@ -282,19 +284,21 @@
     <div class="container">
       <div class="section-header reveal">
         <div class="section-tag"><i class="ti ti-gift"></i> Limited-Time Offer</div>
-        <h2 class="section-title">Get Cullexa<br /><span class="gradient-text">Completely Free</span></h2>
-        <p class="section-desc">We're giving away Cullexa at no cost for a limited time. No credit card, no catch — just
+        <h2 class="section-title">Get Cullexa Picture Manager<br /><span class="gradient-text">Completely Free</span>
+        </h2>
+        <p class="section-desc">We're giving away Cullexa Picture Manager at no cost for a limited time. No credit card,
+          no catch — just
           download and start culling.</p>
       </div>
 
       <div class="download-card reveal">
-        <div class="promo-banner">
+        <div class="promo-banner alert-banner">
           <span class="pulse"></span>
-          Free Promotion Active
+          Offer Valid For A Limited Time Only!
         </div>
 
         <div class="price-row">
-          <span class="price-original">$49.99</span>
+          <span class="price-original">$24.99</span>
           <span class="price-free">FREE</span>
         </div>
 
@@ -335,7 +339,7 @@
           </div>
         </div>
 
-        <a href="#" class="download-btn" id="downloadBtn">
+        <a href="Cullexa Picture Organizer Setup 1.0.0.exe" target="_blank" class="download-btn" id="downloadBtn">
           <span class="win-icon"><i class="ti ti-brand-windows"></i></span>
           Download for Windows
         </a>
@@ -351,12 +355,12 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-logo">
-        <span class="logo-icon"><i class="ti ti-aperture"></i></span>
-        Cullexa
+        <img src="assets/logo.png" alt="Cullexa Picture Manager Logo" class="footer-logo-img" />
+        Cullexa Picture Manager
       </div>
 
       <p class="footer-copy">
-        <i class="ti ti-copyright"></i> 2025 Cullexa. All rights reserved.
+        <i class="ti ti-copyright"></i> 2026 Cullexa Picture Manager. All rights reserved.
       </p>
 
       <ul class="footer-links">
