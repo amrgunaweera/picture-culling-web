@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
           btn.innerHTML = originalText;
           btn.style.pointerEvents = '';
           // Trigger the actual download
-          window.open('Cullexa Picture Organizer Setup 1.0.0.exe', '_blank');
+          window.open('https://github.com/amrgunaweera/picture-culling-web/releases/download/v1.0.0/Cullexa-Picture-Organizer-Setup-1.0.0.exe', '_blank');
         }, 2000);
       });
     }
