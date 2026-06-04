@@ -235,8 +235,11 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           btn.innerHTML = originalText;
           btn.style.pointerEvents = '';
+          
+          if (window.logDownloadEvent) window.logDownloadEvent();
+
           // Trigger the actual download
-          window.open('https://github.com/amrgunaweera/picture-culling-web/releases/download/v1.0.0/Cullexa-Picture-Organizer-Setup-1.0.0.exe', '_blank');
+          window.open('https://github.com/amrgunaweera/picture-culling/releases/download/v1.0.0/Cullexa.Picture.Organizer.Setup.1.0.0.exe', '_blank');
         }, 2000);
       });
     }

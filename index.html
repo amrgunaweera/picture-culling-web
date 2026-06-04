@@ -82,7 +82,7 @@
       </p>
 
       <div class="hero-actions">
-        <a href="https://github.com/amrgunaweera/picture-culling-web/releases/download/v1.0.0/Cullexa-Picture-Organizer-Setup-1.0.0.exe" target="_blank" class="btn-primary" id="heroDownloadBtn">
+        <a href="https://github.com/amrgunaweera/picture-culling/releases/download/v1.0.0/Cullexa.Picture.Organizer.Setup.1.0.0.exe" target="_blank" class="btn-primary" id="heroDownloadBtn">
           <i class="ti ti-download"></i> Download Free for Windows
         </a>
         <a href="#views" class="btn-secondary">
@@ -339,7 +339,7 @@
           </div>
         </div>
 
-        <a href="https://github.com/amrgunaweera/picture-culling-web/releases/download/v1.0.0/Cullexa-Picture-Organizer-Setup-1.0.0.exe" target="_blank" class="download-btn" id="downloadBtn">
+        <a href="https://github.com/amrgunaweera/picture-culling/releases/download/v1.0.0/Cullexa.Picture.Organizer.Setup.1.0.0.exe" target="_blank" class="download-btn" id="downloadBtn">
           <span class="win-icon"><i class="ti ti-brand-windows"></i></span>
           Download for Windows
         </a>
@@ -375,7 +375,7 @@
   <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-analytics.js";
+    import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-analytics.js";
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -394,6 +394,13 @@
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
+    
+    // Expose download tracking to global scope for script.js
+    window.logDownloadEvent = () => {
+      logEvent(analytics, 'file_download', {
+        file_name: 'Cullexa.Picture.Organizer.Setup.1.0.0.exe'
+      });
+    };
   </script>
 </body>
 
