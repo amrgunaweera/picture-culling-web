@@ -1,5 +1,5 @@
 import { useEffect, useRef, useCallback } from 'react';
-import { IconDownload, IconPlayerPlay, IconCheck } from '@tabler/icons-react';
+import { IconDownload, IconPlayerPlay } from '@tabler/icons-react';
 import { useAnimatedCounter } from '../hooks/useAnimatedCounter';
 import { logDownloadEvent } from '../lib/firebase';
 
@@ -112,6 +112,30 @@ export default function Hero() {
             <IconPlayerPlay size={20} stroke={2} />
             See It in Action
           </a>
+        </div>
+
+        {/* Trust indicators */}
+        <div className="hero-trust" style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '24px',
+          animation: 'fade-up 0.8s ease-out 0.35s both',
+          flexWrap: 'wrap',
+          justifyContent: 'center'
+        }}>
+          {['No Ads · No Telemetry', 'Windows 10/11', '100% Free'].map((item) => (
+            <span key={item} style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              fontSize: '0.82rem',
+              color: 'var(--color-text-muted)',
+              fontWeight: '500'
+            }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-green)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12l5 5l10 -10"/></svg>
+              {item}
+            </span>
+          ))}
         </div>
 
         <div className="hero-stats" ref={photosCounter.ref}>

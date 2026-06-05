@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import { IconGift, IconCheck, IconBrandWindows } from '@tabler/icons-react';
+import { IconGift, IconCheck, IconBrandWindows, IconArrowRight } from '@tabler/icons-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { logDownloadEvent } from '../lib/firebase';
 
@@ -79,9 +79,13 @@ export default function Download() {
         </div>
 
         <div className="download-card reveal" ref={cardRef}>
-          <div className="promo-banner alert-banner">
-            <span className="pulse" />
-            Offer Valid For A Limited Time Only!
+          <div className="promo-banner" style={{
+            background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.12), rgba(59, 130, 246, 0.12))',
+            border: '1px solid rgba(139, 92, 246, 0.25)',
+            color: 'var(--color-accent-purple-light)',
+          }}>
+            <span className="pulse" style={{ background: 'var(--color-accent-purple-light)' }} />
+            Limited-Time Free Access
           </div>
 
           <div className="price-row">
@@ -121,8 +125,18 @@ export default function Download() {
           </p>
 
           <div style={{ marginTop: '16px', position: 'relative', zIndex: 1 }}>
-            <Link to="/install" style={{ color: 'var(--color-accent-purple-light)', fontSize: '0.9rem', fontWeight: '600', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+            <Link to="/install" style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              color: 'var(--color-accent-purple-light)',
+              fontSize: '0.9rem',
+              fontWeight: '600',
+              textDecoration: 'none',
+              transition: 'var(--transition-fast)'
+            }}>
               Installation Guide
+              <IconArrowRight size={14} />
             </Link>
           </div>
 

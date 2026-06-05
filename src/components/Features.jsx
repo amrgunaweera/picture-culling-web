@@ -114,6 +114,65 @@ export default function Features() {
             <FeatureCard key={feature.title} {...feature} />
           ))}
         </div>
+
+        {/* AI Analysis Highlight */}
+        <div className="reveal ai-highlight-banner" ref={useScrollReveal()} style={{
+          marginTop: '48px',
+          background: 'var(--gradient-card)',
+          border: '1px solid var(--color-border-subtle)',
+          borderRadius: 'var(--radius-xl)',
+          overflow: 'hidden',
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '0',
+        }}>
+          <div className="ai-text-col" style={{ padding: '48px 40px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              padding: '4px 12px',
+              background: 'rgba(139, 92, 246, 0.1)',
+              border: '1px solid rgba(139, 92, 246, 0.2)',
+              borderRadius: 'var(--radius-full)',
+              fontSize: '0.75rem',
+              fontWeight: '700',
+              color: 'var(--color-accent-purple-light)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              marginBottom: '16px',
+              width: 'fit-content'
+            }}>
+              <IconSparkles size={12} stroke={2} />
+              Powered by AI
+            </div>
+            <h3 style={{ fontSize: '1.5rem', fontWeight: '800', letterSpacing: '-0.02em', marginBottom: '12px', lineHeight: '1.2' }}>
+              Intelligent Image Analysis
+            </h3>
+            <p style={{ color: 'var(--color-text-secondary)', lineHeight: '1.7', fontSize: '0.95rem' }}>
+              Our AI engine evaluates every photograph across multiple quality dimensions — sharpness, exposure, composition, 
+              noise, and more — to give you an instant, objective quality score from 0 to 100.
+            </p>
+          </div>
+          <div className="ai-image-col" style={{ position: 'relative', overflow: 'hidden' }}>
+            <img
+              src="/assets/AI analysis.jpg"
+              alt="AI analysis panel showing quality metrics"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                display: 'block'
+              }}
+            />
+            <div style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(to right, var(--color-bg-primary) 0%, transparent 30%)',
+              pointerEvents: 'none'
+            }} />
+          </div>
+        </div>
       </div>
     </section>
   );

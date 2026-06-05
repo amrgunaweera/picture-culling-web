@@ -1,9 +1,16 @@
 import { useEffect } from 'react';
+import useSEO from '../hooks/useSEO';
 
 export default function PrivacyPolicy() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  useSEO({
+    title: 'Privacy Policy - Cullexa Picture Manager',
+    description: 'Read the privacy policy for Cullexa Picture Manager. We believe in No Ads, No Telemetry, and 100% local processing.',
+    url: 'https://cullexa.web.app/privacy'
+  });
 
   return (
     <section className="privacy-policy" style={{ paddingTop: '160px', paddingBottom: '120px' }}>
