@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import { IconGift, IconCheck, IconBrandWindows } from '@tabler/icons-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { logDownloadEvent } from '../lib/firebase';
@@ -116,8 +117,15 @@ export default function Download() {
           </a>
 
           <p className="download-requirements">
-            Requires Windows 10 or later · 64-bit · ~85 MB download
+            Requires Windows 10 or later · 64-bit · ~145 MB download
           </p>
+
+          <div style={{ marginTop: '16px', position: 'relative', zIndex: 1 }}>
+            <Link to="/install" style={{ color: 'var(--color-accent-purple-light)', fontSize: '0.9rem', fontWeight: '600', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+              Installation Guide
+            </Link>
+          </div>
+
         </div>
       </div>
     </section>

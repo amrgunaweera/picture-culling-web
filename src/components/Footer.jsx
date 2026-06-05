@@ -1,22 +1,29 @@
 import { useCallback } from 'react';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { IconCopyright } from '@tabler/icons-react';
 
 const FOOTER_LINKS = [
   { href: '#features', label: 'Features' },
-  { href: '#how-it-works', label: 'How It Works' },
   { href: '#download', label: 'Download' },
 ];
 
 export default function Footer() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const handleSmoothScroll = useCallback((e, href) => {
     e.preventDefault();
+    if (location.pathname !== '/') {
+      navigate('/' + href);
+      return;
+    }
     const target = document.querySelector(href);
     if (target) {
       const offset = 80;
       const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
-  }, []);
+  }, [location.pathname, navigate]);
 
   return (
     <footer className="footer">
@@ -39,6 +46,9 @@ export default function Footer() {
               </a>
             </li>
           ))}
+          <li>
+            <Link to="/privacy">Privacy Policy</Link>
+          </li>
         </ul>
       </div>
     </footer>
