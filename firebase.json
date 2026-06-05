@@ -1,6 +1,7 @@
 {
   "hosting": {
     "predeploy": [
+      "npm install",
       "npm run build"
     ],
     "site": "cullexa",
