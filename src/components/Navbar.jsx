@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { IconDownload, IconMenu2, IconX } from '@tabler/icons-react';
 
 const DOWNLOAD_URL = 'https://github.com/amrgunaweera/picture-culling/releases/download/v1.0.0/Cullexa.Picture.Organizer.Setup.1.0.0.exe';
@@ -13,6 +14,8 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,6 +30,12 @@ export default function Navbar() {
 
   const handleSmoothScroll = useCallback((e, href) => {
     e.preventDefault();
+    if (location.pathname !== '/') {
+      navigate('/' + href);
+      setMobileOpen(false);
+      document.body.style.overflow = '';
+      return;
+    }
     const target = document.querySelector(href);
     if (target) {
       const offset = 80;
@@ -35,7 +44,7 @@ export default function Navbar() {
     }
     setMobileOpen(false);
     document.body.style.overflow = '';
-  }, []);
+  }, [location.pathname, navigate]);
 
   const toggleMobile = useCallback(() => {
     setMobileOpen((prev) => {
@@ -48,15 +57,17 @@ export default function Navbar() {
   return (
     <nav className={`navbar${scrolled ? ' scrolled' : ''}`} id="navbar">
       <div className="container">
-        <a
-          href="#"
+        <Link
+          to="/"
           className="nav-logo"
           aria-label="Cullexa Picture Manager Home"
-          onClick={(e) => handleSmoothScroll(e, '#hero')}
+          onClick={(e) => {
+            if (location.pathname === '/') handleSmoothScroll(e, '#hero');
+          }}
         >
           <img src="/assets/logo.png" alt="Cullexa Picture Manager Logo" className="nav-logo-img" />
           Cullexa Picture Manager
-        </a>
+        </Link>
 
         <ul className={`nav-links${mobileOpen ? ' open' : ''}`} id="navLinks">
           {NAV_LINKS.map(({ href, label }) => (

@@ -1,15 +1,14 @@
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import Showcase from './components/Showcase';
-import HowItWorks from './components/HowItWorks';
-import Download from './components/Download';
 import Footer from './components/Footer';
+import Home from './pages/Home';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import InstallGuide from './pages/InstallGuide';
 
 export default function App() {
   return (
     <>
-      {/* Animated Background */}
+      {/* Animated Background (Shared across pages) */}
       <div className="bg-grid" aria-hidden="true" />
       <div className="bg-orbs" aria-hidden="true">
         <div className="orb orb-1" />
@@ -20,12 +19,14 @@ export default function App() {
       {/* Navigation */}
       <Navbar />
 
-      {/* Page Sections */}
-      <Hero />
-      <Features />
-      <Showcase />
-      <HowItWorks />
-      <Download />
+      {/* Page Routing */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/install" element={<InstallGuide />} />
+      </Routes>
+
+      {/* Footer */}
       <Footer />
     </>
   );
