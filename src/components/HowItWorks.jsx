@@ -54,7 +54,7 @@ function StepCard({ number, icon: Icon, title, description, delay, color, bg, bo
         width: '64px',
         height: '64px',
         borderRadius: '50%',
-        background: bg,
+        background: `linear-gradient(${bg}, ${bg}), var(--color-bg-primary)`,
         border: `2px solid ${border}`,
         display: 'flex',
         alignItems: 'center',
