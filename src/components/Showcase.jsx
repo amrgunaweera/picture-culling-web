@@ -149,7 +149,7 @@ export default function Showcase() {
                 }}
               >
                 <div className="showcase-image">
-                  <img src={tab.image} alt={tab.alt} />
+                  <img src={tab.image} alt={tab.alt} loading="lazy" />
                   <div className="showcase-caption">
                     <div>
                       <h4>{tab.caption}</h4>

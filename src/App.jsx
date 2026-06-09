@@ -20,11 +20,13 @@ export default function App() {
       <Navbar />
 
       {/* Page Routing */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/privacy" element={<PrivacyPolicy />} />
-        <Route path="/install" element={<InstallGuide />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/install" element={<InstallGuide />} />
+        </Routes>
+      </main>
 
       {/* Footer */}
       <Footer />

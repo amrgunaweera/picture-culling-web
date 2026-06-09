@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-export default function useSEO({ title, description, url }) {
+export default function useSEO({ title, description, url, schema }) {
   useEffect(() => {
     if (title) {
       document.title = title;
@@ -23,5 +23,17 @@ export default function useSEO({ title, description, url }) {
       const canonical = document.querySelector('link[rel="canonical"]');
       if (canonical) canonical.setAttribute('href', url);
     }
-  }, [title, description, url]);
+    if (schema) {
+      let script = document.querySelector('script[type="application/ld+json"]');
+      if (!script) {
+        script = document.createElement('script');
+        script.type = 'application/ld+json';
+        document.head.appendChild(script);
+      }
+      script.textContent = JSON.stringify(schema);
+    } else {
+      const script = document.querySelector('script[type="application/ld+json"]');
+      if (script) script.remove();
+    }
+  }, [title, description, url, schema]);
 }
