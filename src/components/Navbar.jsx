@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { IconDownload, IconMenu2, IconX } from '@tabler/icons-react';
 
-const DOWNLOAD_URL = 'https://github.com/amrgunaweera/picture-culling/releases/download/v1.0.0/Cullexa.Picture.Organizer.Setup.1.0.0.exe';
+const DOWNLOAD_URL = 'https://github.com/amrgunaweera/picture-culling/releases/download/v1.0.1/Cullexa.Picture.Organizer.Setup.1.0.1.exe';
 
 const NAV_LINKS = [
   { href: '#features', label: 'Features' },

@@ -28,7 +28,7 @@ const steps = [
               wordBreak: 'break-all',
               overflowWrap: 'anywhere'
             }}>
-              Cullexa.Picture.Organizer.Setup.1.0.0.exe
+              Cullexa.Picture.Organizer.Setup.1.0.1.exe
             </code>{' '}
             file to download.
           </li>

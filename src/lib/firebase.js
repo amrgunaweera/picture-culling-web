@@ -16,7 +16,7 @@ const analytics = getAnalytics(app);
 
 export const logDownloadEvent = () => {
   logEvent(analytics, 'file_download', {
-    file_name: 'Cullexa.Picture.Organizer.Setup.1.0.0.exe'
+    file_name: 'Cullexa.Picture.Organizer.Setup.1.0.1.exe'
   });
 };
 
