@@ -77,6 +77,17 @@ export default function Navbar() {
               </a>
             </li>
           ))}
+          <li>
+            <Link 
+              to="/contact" 
+              onClick={() => {
+                setMobileOpen(false);
+                document.body.style.overflow = '';
+              }}
+            >
+              Contact Us
+            </Link>
+          </li>
         </ul>
 
         <div className="nav-actions">

@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import InstallGuide from './pages/InstallGuide';
+import Contact from './pages/Contact';
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/install" element={<InstallGuide />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
 
