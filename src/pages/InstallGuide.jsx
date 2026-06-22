@@ -28,7 +28,7 @@ const steps = [
               wordBreak: 'break-all',
               overflowWrap: 'anywhere'
             }}>
-              Cullexa.Picture.Organizer.Setup.1.0.1.exe
+              Cullexa.Picture.Manager.1.0.1.msi
             </code>{' '}
             file to download.
           </li>
@@ -228,7 +228,7 @@ export default function InstallGuide() {
           boxShadow: 'var(--shadow-cta)',
           transition: 'var(--transition-base)'
         }}>
-          Download Cullexa for Free
+          Download Cullexa Picture Manager for Free
           <IconArrowRight size={16} />
         </a>
       </div>

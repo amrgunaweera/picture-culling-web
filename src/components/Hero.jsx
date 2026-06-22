@@ -3,7 +3,7 @@ import { IconDownload, IconPlayerPlay } from '@tabler/icons-react';
 import { useAnimatedCounter } from '../hooks/useAnimatedCounter';
 import { logDownloadEvent } from '../lib/firebase';
 
-const DOWNLOAD_URL = 'https://github.com/amrgunaweera/picture-culling/releases/download/v1.0.1/Cullexa.Picture.Organizer.Setup.1.0.1.exe';
+const DOWNLOAD_URL = 'https://github.com/amrgunaweera/picture-culling/releases/download/v1.0.1/Cullexa.Picture.Manager.1.0.1.msi';
 
 export default function Hero() {
   const heroImageRef = useRef(null);

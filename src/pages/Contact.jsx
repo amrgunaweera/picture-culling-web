@@ -88,7 +88,7 @@ export default function Contact() {
           name: name,
           email: email,
           message: description,
-          _subject: "Cullexa Feedback"
+          _subject: "Cullexa Picture Manager Feedback"
         })
       });
 

@@ -4,7 +4,7 @@ import { IconGift, IconCheck, IconBrandWindows, IconArrowRight } from '@tabler/i
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { logDownloadEvent } from '../lib/firebase';
 
-const DOWNLOAD_URL = 'https://github.com/amrgunaweera/picture-culling/releases/download/v1.0.1/Cullexa.Picture.Organizer.Setup.1.0.1.exe';
+const DOWNLOAD_URL = 'https://github.com/amrgunaweera/picture-culling/releases/download/v1.0.1/Cullexa.Picture.Manager.1.0.1.msi';
 
 const FEATURES = [
   'AI Image Quality Analysis',
